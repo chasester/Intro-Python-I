@@ -36,9 +36,31 @@ print("Distance is: {:.2f}".format(dist(a, b)))
 
 # YOUR CODE HERE
 
+def print_tuple(t):
+    if type (t) is not tuple: #beak if we dont get the value we expected
+        print(t);
+    else:
+        for a in enumerate(t):
+            print(a);
+        
 t = (1, 2, 5, 7, 99)
 print_tuple(t)  # Prints 1 2 5 7 99, one per line
 
+#below will also work because of the function over runing the stack
+#Python is a run time language so when you redeclare something on the stack
+#the object is over written for all the folling code, since this code flows
+#from top to bottom defining it below the last function will creat a new
+#funciton pointer in the vm that over rides the old function pointer and so
+#this new function will be call for all remaining code.
+
+#def print_tuple(t):
+    #print(t);
+
+
 # Declare a tuple of 1 element then print it
 u = (1)  # What needs to be added to make this work?
+#the above is not a tuple.
+#to make it a tuple you must
+#u = (1,) #this is the only way to make a one element tuple
+
 print_tuple(u)
